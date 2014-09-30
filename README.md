@@ -21,6 +21,20 @@ slip.js
 
 ![匆匆那年](http://qianbao.baidu.com/huodong/15/qrcode?text=http://binnng.github.io/slip.js/demo/sohutv-ccnn.html&size=6)
 
+### 安装
+
+使用 bower 安装
+
+```
+bower install slip.binnng.js --save
+```
+
+更新版本
+
+```
+bower update
+```
+
 ### 简单代码
 
 一个全屏可滑动的宣传网页：
@@ -48,10 +62,7 @@ Slip(ele, "x").slider()
   var ele = document.getElementById("slip");
   var mySlip = Slip(ele, "xy");
 
-  mySlip.setCoord({
-    x: 0,
-    y: 120
-  })
+  mySlip
     .start(function(event) {
       console.log('start');
 
@@ -181,12 +192,23 @@ Slip(ele, "x").slider().height(200);
 
 ##### 参数
 * `num`: *Number|String*, 高度值，数字或者带有px的值。
-* 
+
 #### `width`
 设置轮播器的宽度
 
 ##### 参数
 * `num`: *Number|String*, 宽度值，数字或者带有px的值。
+
+#### 属性
+
+##### `page`
+当前轮播器在第几页
+
+```javascript
+Slip(ele, 'x').end(function() {
+  console.log(this.page);
+});
+```
 
 ### Webapp 全屏网页
 如[搜狐视频客户端完美适配iOS8](http://binnng.github.io/slip.js/demo/sohutv-ios8.html)这种形式的网页。
